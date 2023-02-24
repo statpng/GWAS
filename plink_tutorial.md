@@ -8,7 +8,8 @@ You can download the latest version of plink from the official website (https://
 
 2. Prepare the data:
 Before using plink, you need to prepare the genetic data in the PLINK format.
-(1) {PED, MAP};  (2) {BIM, BED, FAM}
+
+```(1) {PED, MAP};  (2) {BIM, BED, FAM}```
 
 - .ped: PLINK/MERLIN/Haploview text pedigree + genotype table (ACGT)
 - .map: PLINK text fileset variant information file
