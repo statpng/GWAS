@@ -81,14 +81,12 @@ Before using plink, you need to prepare the genetic data in the PLINK format.
 - .fam: PLINK sample information file
 
 Data can be transformed into other formats using the table below:
---------------------
 | format | Generate | Input option |
---------------------
-{PED, MAP} | --recode | --file
-{BED, BIM, FAM} | --make-bed | --bfile
-{TPED, TFAM} | --recode --transpose | --tfile
-{LGEN, MAP, FAM} | --recode-lgen | --lfile
---------------------
+| ------ | :------: | :------: |
+| {PED, MAP} | --recode | --file |
+| {BED, BIM, FAM} | --make-bed | --bfile |
+| {TPED, TFAM} | --recode --transpose | --tfile |
+| {LGEN, MAP, FAM} | --recode-lgen | --lfile |
 
 
 
