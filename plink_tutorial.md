@@ -60,12 +60,6 @@ This command will perform quality control (QC) on the dataset by removing SNPs a
   - ```plink --file <filename> --remove <bad_samples.txt>``` 
   remove samples.
   
-  - ```plink --file <filename> --indep-pairwise <window size> <step size> <r2 threshold>``` 
-  is an LD-based pruning[^1] to select a SNP subset in approximate Linkage Disequilibrium (LD)
-    - ```.prune.in```: a pruned subset of marker IDs that are in approximate linkage equilibrium with each other
-    - ```.prune.out```: the IDs of all excluded variants.
-[^1]: They are currently based on correlations between genotype allele counts; phase is not considered. (Results may be slightly different from PLINK 1.07, due to a minor bugfix in the r2 computation when missing data is present, and more systematic handling of multicollinearity.)
-  
 
   
 ## 4. Association analysis
@@ -79,9 +73,14 @@ This command will perform a linear regression analysis of each SNP on the phenot
   
 ## 5. Advanced operations:
 PLINK also supports several advanced operations such as data imputation, LD-based pruning, and haplotype analysis. Here are some examples:
-  - ```plink --bfile <input> --pca --out <output>``` performs a principal component analysis (PCA) on the genetic data to identify population structure.
+  - ```plink --file <input> --pca --out <output>``` performs a principal component analysis (PCA) on the genetic data to identify population structure.
 - ```plink --file <filename> --geno <threshold> --impute``` imputes missing genotypes using the reference panel.
-
+  - ```plink --file <filename> --indep-pairwise <window size> <step size> <r2 threshold>``` 
+  is an LD-based pruning[^1] to select a SNP subset in approximate Linkage Disequilibrium (LD)
+    - ```.prune.in```: a pruned subset of marker IDs that are in approximate linkage equilibrium with each other
+    - ```.prune.out```: the IDs of all excluded variants.
+[^1]: They are currently based on correlations between genotype allele counts; phase is not considered. (Results may be slightly different from PLINK 1.07, due to a minor bugfix in the r2 computation when missing data is present, and more systematic handling of multicollinearity.)
+  
 - Haplotype analysis[^2]: To perform haplotype analysis, use the command ```plink --file <filename> --hap <output filename>```
 [^2]: PLINK 1.7 version
   
