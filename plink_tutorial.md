@@ -81,12 +81,12 @@ These are just a few examples of what you can do with PLINK. For more informatio
 
   
   
-  
-
-```plink --bfile <input> --geno 0.05 --maf 0.01 --hwe 0.00001 --mind 0.1 --pca --covar ./data/covar.txt --pheno <input.pheno> --pheno-name <pheno_name> --linear --adjust --out <output>```
-  
 
   
+## One-line PLINK command for GWAS
+```plink --file <input> --geno 0.05 --maf 0.01 --hwe 0.00001 --mind 0.1 --pca --covar <covar.txt> --pheno <pheno.txt> --pheno-name <phenotype_name> --assoc --adjust --out <output>```
+
+  - --assoc / --fisher / --model / --linear / --logistic
 
   
 ## Other useful commands
