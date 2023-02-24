@@ -33,7 +33,7 @@ Data can be transformed into other formats using the table below:
 | {BED, BIM, FAM} | --make-bed | --bfile |
 | {TPED, TFAM} | --recode --transpose | --tfile |
 | {LGEN, MAP, FAM} | --recode-lgen | --lfile |
-> For example, ```plink --file <filename for {PED, MAP}>``` or ```plink --bfile <filename for {BED, BIM, FAM}>```.
+> For example, ```plink --file <filename>``` for {PED, MAP} or ```plink --bfile <filename>``` for {BED, BIM, FAM}.
 > PLINK also supports conversion from VCF format as ```plink --vcf <filename.vcf.gz> --make-bed```
 
 
