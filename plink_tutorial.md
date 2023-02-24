@@ -43,9 +43,8 @@ Once the data is ready, you can start using PLINK. Here are some of the basic op
 
 - Summary Statistics
 This command will compute basic statistics (such as allele frequencies and missing data rates) for the dataset in the input files.
-  - ```plink --file <filename> --summary ``` Show basic statistics: To get basic statistics on the dataset.
   - ```plink --file <filename> --freq```
-  - ```plink --file <filename> --missing ``` Check for missing data: To check for missing data.
+  - ```plink --file <filename> --missing ``` checks for missing data.
 
 - Quality Control (QC)
 This command will perform quality control (QC) on the dataset by removing SNPs and individuals that do not meet certain criteria. In this example, SNPs with a missing genotype rate higher than 5% (--geno 0.05), a minor allele frequency lower than 1% (--maf 0.01), and a significant deviation from Hardy-Weinberg equilibrium (--hwe 0.00001) will be removed. Individuals with a missing genotype rate higher than 10% (--mind 0.1) will also be removed. The filtered dataset will be saved in the output files.
