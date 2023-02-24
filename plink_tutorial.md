@@ -66,23 +66,27 @@ plink --bfile input --extract output.prune.in --make-bed --
 
 Sure, here is a brief tutorial on how to use plink, a command-line tool for working with genetic data in the PLINK format:
 
-Download and install plink:
+1. Download and install plink:
 You can download the latest version of plink from the official website (https://www.cog-genomics.org/plink/). Once downloaded, unzip the file and place the plink executable in a directory that is included in your system PATH.
-Prepare the data:
+
+2. Prepare the data:
 Before using plink, you need to prepare the genetic data in the PLINK format. This format consists of three files: a PED file that contains the genotype data for each individual, a MAP file that contains the information on the markers, and a FAM file that contains information on the samples.
-Basic operations:
+
+3. Basic operations:
 Once the data is ready, you can start using plink. Here are some of the basic operations that you can perform:
-Show basic statistics: To get basic statistics on the dataset, use the command ```plink --file <filename> --summary ```
-Check for missing data: To check for missing data, use the command ``` plink --file <filename> --missing ```
-Filter the data: To filter the data based on various criteria such as allele frequency, genotyping rate, etc., use the command ``` plink --file <filename> --maf <threshold> --geno <threshold> ```
-Perform association tests: To perform association tests such as logistic regression, use the command "plink --file <filename> --logistic".
-Conduct genome-wide association study (GWAS): To perform a GWAS, use the command ```plink --file <filename> --assoc```
-Conduct principal component analysis (PCA): To perform PCA on the dataset, use the command ```plink --file <filename> --pca```
-Advanced operations:
+- Show basic statistics: To get basic statistics on the dataset, use the command ```plink --file <filename> --summary ```
+- Check for missing data: To check for missing data, use the command ``` plink --file <filename> --missing ```
+- Filter the data: To filter the data based on various criteria such as allele frequency, genotyping rate, etc., use the command ``` plink --file <filename> --maf <threshold> --geno <threshold> ```
+- Perform association tests: To perform association tests such as logistic regression, use the command "plink --file <filename> --logistic".
+- Conduct genome-wide association study (GWAS): To perform a GWAS, use the command ```plink --file <filename> --assoc```
+- Conduct principal component analysis (PCA): To perform PCA on the dataset, use the command ```plink --file <filename> --pca```
+
+4. Advanced operations:
 Plink also supports several advanced operations such as data imputation, LD-based pruning, and haplotype analysis. Here are some examples:
-Impute missing genotypes: To impute missing genotypes using the reference panel, use the command ```plink --file <filename> --geno <threshold> --impute```
-LD-based pruning: To perform LD-based pruning, use the command ```plink --file <filename> --indep-pairwise <window size> <step size> <r2 threshold>```
-Haplotype analysis: To perform haplotype analysis, use the command ```plink --file <filename> --hap <output filename>```
-Output formats:
+- Impute missing genotypes: To impute missing genotypes using the reference panel, use the command ```plink --file <filename> --geno <threshold> --impute```
+- LD-based pruning: To perform LD-based pruning, use the command ```plink --file <filename> --indep-pairwise <window size> <step size> <r2 threshold>```
+- Haplotype analysis: To perform haplotype analysis, use the command ```plink --file <filename> --hap <output filename>```
+
+5. Output formats:
 Plink can output results in several formats such as text, binary, and VCF. To specify the output format, use the ```--out <output filename>``` flag followed by the desired format extension.
 These are just a few examples of what you can do with plink. For more information on plink and its commands, refer to the official documentation (https://www.cog-genomics.org/plink/1.9/).
