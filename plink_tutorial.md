@@ -72,8 +72,8 @@ Prepare the data:
 Before using plink, you need to prepare the genetic data in the PLINK format. This format consists of three files: a PED file that contains the genotype data for each individual, a MAP file that contains the information on the markers, and a FAM file that contains information on the samples.
 Basic operations:
 Once the data is ready, you can start using plink. Here are some of the basic operations that you can perform:
-Show basic statistics: To get basic statistics on the dataset, use the command "plink --file <filename> --summary".
-Check for missing data: To check for missing data, use the command "plink --file <filename> --missing".
+Show basic statistics: To get basic statistics on the dataset, use the command ```plink --file <filename> --summary ```
+Check for missing data: To check for missing data, use the command ``` plink --file <filename> --missing ```
 Filter the data: To filter the data based on various criteria such as allele frequency, genotyping rate, etc., use the command 
 ```{css}
 plink --file <filename> --maf <threshold> --geno <threshold>
