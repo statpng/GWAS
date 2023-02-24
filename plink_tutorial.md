@@ -47,6 +47,10 @@ This command will perform quality control (QC) on the dataset by removing SNPs a
 ```plink --bfile <filename> --linear --pheno pheno.txt --covar covar.txt --covar-name <cov1>,<cov2> --out <output>```
 This command will perform a linear regression analysis of each SNP on the phenotype (stored in the pheno.txt file) while controlling for covariates (stored in the covar.txt file). The results will be saved in the output files.
 
+  - --fisher
+  - --model
+  - --linear
+  - --logistic
   
 4. Advanced operations:
 Plink also supports several advanced operations such as data imputation, LD-based pruning, and haplotype analysis. Here are some examples:
@@ -63,7 +67,7 @@ These are just a few examples of what you can do with plink. For more informatio
   
   
 
-```plink --bfile <input> --geno 0.05 --maf 0.01 --hwe 0.00001 --mind 0.1 --pca --covar ./data/covar.txt --pheno <input.pheno> --pheno-name <pheno_name> --assoc --out <output>```
+```plink --bfile <input> --geno 0.05 --maf 0.01 --hwe 0.00001 --mind 0.1 --pca --covar ./data/covar.txt --pheno <input.pheno> --pheno-name <pheno_name> --linear --adjust --out <output>```
   
 
   
