@@ -52,7 +52,7 @@ This command will perform quality control (QC) on the dataset by removing SNPs a
   
 ## 4. Association analysis
 ```plink --bfile <filename> --pheno <pheno.txt> --covar <covar.txt> --covar-name <cov1>,<cov2> --linear --out <output>```
-This command will perform a linear regression analysis of each SNP on the phenotype (stored in the pheno.txt file) while controlling for covariates (stored in the covar.txt file). Instead of ```--linear```, the following analyses can be applied:
+This command will perform a linear regression analysis of each SNP on the phenotype (stored in the pheno.txt file) while controlling for covariates (stored in the covar.txt file). Instead of ```--linear```, the following options can be either replaced or used together:
   - ```--fisher```
   - ```--model```
   - ```--linear```
