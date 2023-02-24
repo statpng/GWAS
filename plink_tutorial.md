@@ -75,20 +75,14 @@ PLINK also supports several advanced operations such as data imputation, LD-base
 [^2]: PLINK 1.7 version
   
   
-## 6. Output formats:
-PLINK can output results in several formats such as text, binary, and VCF. To specify the output format, use the ```--out <output filename>``` flag followed by the desired format extension.
-These are just a few examples of what you can do with PLINK. For more information on PLINK and its commands, refer to the official documentation (https://www.cog-genomics.org/plink/1.9/).
-
-  
   
 
-  
-## One-line PLINK command for GWAS
+## 6. One-line PLINK command for GWAS
 ```plink --file <input> --geno 0.05 --maf 0.01 --hwe 0.00001 --mind 0.1 --pca --covar <covar.txt> --pheno <pheno.txt> --pheno-name <phenotype_name> --assoc --adjust --out <output>```
 
   - --assoc / --fisher / --model / --linear / --logistic
 
   
-## Other useful commands
+## 7. Other useful commands
 
 > --make-bed, --recode, --flip-scan, --merge-list, --write-snplist, --list-duplicate-vars, --freqx, --missing, --test-mishap, --hardy, --mendel, --ibc, --impute-sex, --indep-pairphase, --r2, --show-tags, --blocks, --distance, --genome, --homozyg, --make-rel, --make-grm-gz, --rel-cutoff, --cluster, --pca, --neighbour, --ibs-test, --regress-distance, --model, --bd, --gxe, --logistic, --dosage, --lasso, --test-missing, --make-perm-pheno, --unrelated-heritability, --tdt, --dfam, --qfam, --tucc, --annotate, --clump, --gene-report, --meta-analysis, --epistasis, --fast-epistasis, and --score
