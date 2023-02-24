@@ -87,9 +87,7 @@ Data can be transformed into other formats using the table below:
 | {BED, BIM, FAM} | --make-bed | --bfile |
 | {TPED, TFAM} | --recode --transpose | --tfile |
 | {LGEN, MAP, FAM} | --recode-lgen | --lfile |
-
-
-
+> plink --vcf kg3-chr22.vcf.gz --make-bed
 
 3. Basic operations:
 Once the data is ready, you can start using PLINK. Here are some of the basic operations that you can perform:
