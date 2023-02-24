@@ -18,8 +18,8 @@ Before using PLINK, you need to prepare the genetic data in the PLINK format.
   - .fam: PLINK sample information file (FID | IID | PID | MID | Sex | P)
 
 Additionally, 
-  - pheno.txt contains FID | IID | P1 | P2 | P3 | ...
-  - covar.txt contains FID | IID | C1 | C2 | C3 | ...
+  - pheno.txt: phenotype information (FID | IID | P1 | P2 | P3 | ...)
+  - covar.txt: covariates information (FID | IID | C1 | C2 | C3 | ...)
 
 Data can be transformed into other formats using the table below:
 | format | Generate | Input option |
