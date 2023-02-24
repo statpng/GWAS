@@ -98,3 +98,12 @@ PLINK also supports several advanced operations such as data imputation, LD-base
 ## 7. Other useful commands
 
 > --make-bed, --recode, --flip-scan, --merge-list, --write-snplist, --list-duplicate-vars, --freqx, --missing, --test-mishap, --hardy, --mendel, --ibc, --impute-sex, --indep-pairphase, --r2, --show-tags, --blocks, --distance, --genome, --homozyg, --make-rel, --make-grm-gz, --rel-cutoff, --cluster, --pca, --neighbour, --ibs-test, --regress-distance, --model, --bd, --gxe, --logistic, --dosage, --lasso, --test-missing, --make-perm-pheno, --unrelated-heritability, --tdt, --dfam, --qfam, --tucc, --annotate, --clump, --gene-report, --meta-analysis, --epistasis, --fast-epistasis, and --score
+
+  
+  
+## 8. References
+- Manual: https://zzz.bwh.harvard.edu/plink/data.shtml
+- Tutorial 1: https://www.bioinf.wits.ac.za/courses/sahgp/plink-tut-jul14.pdf
+- Tutorial 2: https://genomicsbootcamp.github.io/book/principal-component-analysis-pca.html#run-a-pca-in-r 
+- Lecture: http://faculty.washington.edu/tathornt/SISG2021.html
+- GRS: https://mopipe.tistory.com/129
