@@ -11,11 +11,15 @@ Before using PLINK, you need to prepare the genetic data in the PLINK format.
 
 ```(1) {PED, MAP}  or  (2) {BIM, BED, FAM}```
 
-  - .ped: PLINK/MERLIN/Haploview text pedigree + genotype table (ACGT)
-  - .map: PLINK text fileset variant information file
-  - .bim: PLINK extended MAP file
-  - .bed: PLINK binary biallelic genotype table
-  - .fam: PLINK sample information file
+  - .ped: PLINK/MERLIN/Haploview text pedigree + genotype (ATGC) table (FID | IID | PID | MID | Sex | P | rs1 | rs2 | rs3)
+  - .map: PLINK text fileset variant information file (Chr | SNP | GD | BPP)
+  - .bim: PLINK extended MAP file (Chr | SNP | GD | BPP | Allele1 | Allele2)
+  - .bed: PLINK binary biallelic genotype table (binary version of the SNP information of the .ped file)
+  - .fam: PLINK sample information file (FID | IID | PID | MID | Sex | P)
+
+Additionally, 
+  - pheno.txt contains FID | IID | P1 | P2 | P3 | ...
+  - covar.txt contains FID | IID | C1 | C2 | C3 | ...
 
 Data can be transformed into other formats using the table below:
 | format | Generate | Input option |
