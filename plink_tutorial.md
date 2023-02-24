@@ -1,13 +1,13 @@
 # PLINK Tutorial
-PLINK is a popular command-line tool for analyzing genetic data, particularly in genome-wide association studies (GWAS). In this tutorial, we will cover some basic commands and examples to help you get started with Plink.
+PLINK is a popular command-line tool for analyzing genetic data, particularly in genome-wide association studies (GWAS). In this tutorial, we will cover some basic commands and examples to help you get started with PLINK.
 
 
-## 1. Download and install plink:
-You can download the latest version of plink from the official website (https://www.cog-genomics.org/plink/). Once downloaded, unzip the file and place the plink executable in a directory that is included in your system PATH.
+## 1. Download and install PLINK:
+You can download the latest version of PLINK from the official website (https://www.cog-genomics.org/plink/). Once downloaded, unzip the file and place the PLINK executable in a directory that is included in your system PATH.
 
 
 ## 2. Prepare the data:
-Before using plink, you need to prepare the genetic data in the PLINK format.
+Before using PLINK, you need to prepare the genetic data in the PLINK format.
 
 ```(1) {PED, MAP};  (2) {BIM, BED, FAM}```
 
@@ -67,7 +67,7 @@ This command will perform a linear regression analysis of each SNP on the phenot
   
   
 ## 5. Advanced operations:
-Plink also supports several advanced operations such as data imputation, LD-based pruning, and haplotype analysis. Here are some examples:
+PLINK also supports several advanced operations such as data imputation, LD-based pruning, and haplotype analysis. Here are some examples:
   - ```plink --bfile <input> --pca --out <output>``` performs a principal component analysis (PCA) on the genetic data to identify population structure.
 - ```plink --file <filename> --geno <threshold> --impute``` imputes missing genotypes using the reference panel.
 
@@ -76,8 +76,8 @@ Plink also supports several advanced operations such as data imputation, LD-base
   
   
 ## 6. Output formats:
-Plink can output results in several formats such as text, binary, and VCF. To specify the output format, use the ```--out <output filename>``` flag followed by the desired format extension.
-These are just a few examples of what you can do with plink. For more information on plink and its commands, refer to the official documentation (https://www.cog-genomics.org/plink/1.9/).
+PLINK can output results in several formats such as text, binary, and VCF. To specify the output format, use the ```--out <output filename>``` flag followed by the desired format extension.
+These are just a few examples of what you can do with PLINK. For more information on PLINK and its commands, refer to the official documentation (https://www.cog-genomics.org/plink/1.9/).
 
   
   
