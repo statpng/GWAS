@@ -2,11 +2,11 @@
 PLINK is a popular command-line tool for analyzing genetic data, particularly in genome-wide association studies (GWAS). In this tutorial, we will cover some basic commands and examples to help you get started with Plink.
 
 
-1. Download and install plink:
+## 1. Download and install plink:
 You can download the latest version of plink from the official website (https://www.cog-genomics.org/plink/). Once downloaded, unzip the file and place the plink executable in a directory that is included in your system PATH.
 
 
-2. Prepare the data:
+## 2. Prepare the data:
 Before using plink, you need to prepare the genetic data in the PLINK format.
 
 ```(1) {PED, MAP};  (2) {BIM, BED, FAM}```
@@ -26,7 +26,7 @@ Data can be transformed into other formats using the table below:
 | {LGEN, MAP, FAM} | --recode-lgen | --lfile |
 > PLINK also supports conversion from VCF format as ```plink --vcf <filename.vcf.gz> --make-bed```
 
-3. Basic operations:
+## 3. Basic operations:
 Once the data is ready, you can start using PLINK. Here are some of the basic operations that you can perform:
 - Summary Statistics
 This command will compute basic statistics (such as allele frequencies and missing data rates) for the dataset in the input files.
@@ -44,7 +44,7 @@ This command will perform quality control (QC) on the dataset by removing SNPs a
   ```plink --bfile input --indep-pairwise 50 5 0.2 --out output```
 
   
-4. Association analysis
+## 4. Association analysis
 ```plink --bfile <filename> --linear --pheno pheno.txt --covar covar.txt --covar-name <cov1>,<cov2> --out <output>```
 This command will perform a linear regression analysis of each SNP on the phenotype (stored in the pheno.txt file) while controlling for covariates (stored in the covar.txt file). The results will be saved in the output files.
 
@@ -53,7 +53,7 @@ This command will perform a linear regression analysis of each SNP on the phenot
   - --linear
   - --logistic
   
-4. Advanced operations:
+## 5. Advanced operations:
 Plink also supports several advanced operations such as data imputation, LD-based pruning, and haplotype analysis. Here are some examples:
   - PCA: This command will perform a principal component analysis (PCA) on the genetic data to identify population structure. The results will be saved in the output files: ```plink --bfile <input> --pca --out <output>```
 - Impute missing genotypes: To impute missing genotypes using the reference panel, use the command ```plink --file <filename> --geno <threshold> --impute```
@@ -65,7 +65,7 @@ Plink also supports several advanced operations such as data imputation, LD-base
   
 - Haplotype analysis: To perform haplotype analysis, use the command ```plink --file <filename> --hap <output filename>```
 
-5. Output formats:
+## 6. Output formats:
 Plink can output results in several formats such as text, binary, and VCF. To specify the output format, use the ```--out <output filename>``` flag followed by the desired format extension.
 These are just a few examples of what you can do with plink. For more information on plink and its commands, refer to the official documentation (https://www.cog-genomics.org/plink/1.9/).
 
@@ -79,6 +79,6 @@ These are just a few examples of what you can do with plink. For more informatio
   
 
   
-### Other useful commands
+## Other useful commands
 
 > --make-bed, --recode, --flip-scan, --merge-list, --write-snplist, --list-duplicate-vars, --freqx, --missing, --test-mishap, --hardy, --mendel, --ibc, --impute-sex, --indep-pairphase, --r2, --show-tags, --blocks, --distance, --genome, --homozyg, --make-rel, --make-grm-gz, --rel-cutoff, --cluster, --pca, --neighbour, --ibs-test, --regress-distance, --model, --bd, --gxe, --logistic, --dosage, --lasso, --test-missing, --make-perm-pheno, --unrelated-heritability, --tdt, --dfam, --qfam, --tucc, --annotate, --clump, --gene-report, --meta-analysis, --epistasis, --fast-epistasis, and --score
