@@ -43,7 +43,7 @@ This command will perform quality control (QC) on the dataset by removing SNPs a
   
   - ``` plink --file <filename> --maf <minimum-freq> --max-maf <maximum-freq> ``` 
   
-  filters out SNPs whose minor allele frequencies fall outside the range of <minimum-freq> to <maximum-freq>.
+  filters out SNPs whose minor allele frequencies fall outside the range of ```<minimum-freq>``` to ```<maximum-freq>```.
   
   - ``` plink --file <filename> --hwe <p-value> ``` 
   
