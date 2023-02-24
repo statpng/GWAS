@@ -13,22 +13,30 @@ Before using PLINK, you need to prepare the genetic data in the PLINK format.
 
   - .ped: PLINK/MERLIN/Haploview text pedigree + genotype (ATGC) table (FID | IID | PID | MID | Sex | P | rs1 | rs2 | rs3)
   - .map: PLINK text fileset variant information file (Chr | SNP | GD | BPP)
-  - .bim: PLINK extended MAP file (Chr | SNP | GD | BPP | Allele1 | Allele2)
-  - .bed: PLINK binary biallelic genotype table (binary version of the SNP information of the .ped file)
-  - .fam: PLINK sample information file (FID | IID | PID | MID | Sex | P)
+  - .bim[^a]: PLINK extended MAP file (Chr | SNP | GD | BPP | Allele1 | Allele2)
+  - .bed[^b]: PLINK binary biallelic genotype table (binary version of the SNP information of the .ped file)
+  - .fam[^c]: PLINK sample information file (FID | IID | PID | MID | Sex | P)
 
 Additionally, 
   - pheno.txt: phenotype information (FID | IID | P1 | P2 | P3 | ...)
-  - covar.txt: covariates information (FID | IID | C1 | C2 | C3 | ...)
+  - covar.txt[^d]: covariates information (FID | IID | C1 | C2 | C3 | ...)
+
+[^a]: biallelic 변이 ID, 위치, Alleles 정보. [a] GD: “0”으로 세팅하는게 안전;  [b] BPP 값이 (-)인 경우, PLINK에서 해당 변이를 무시함;  [c] Allele: biallelic 변이들 정보 (주로 Minor, Major 순서);  [d] Chr: X chromosome (X or 23), Y chromosome (Y or 24), Pseudo-autosomal region of X (XY or 25), Mitochondrial (MT or 26)
+[^b]: (variants by sample) compressed matrix. [a] .binary >> read.bed() in r 이용) >> Diploid 유전체에서 각 행렬의 원소는 “A2 (Ref Allele)의 개수” (0, 1, 2)를 나타낸다.
+[^c]: [a] FID: 없으면 0;  [b] Sex: 1=male, 2=female, 0=unknown;  [c] Phenotype: 1=control, 2=case, 0 or -9 or non-numeric = missing, numeric value = quantitative trait.
+[^d]:  By default, the main phenotype is set to missing if any covariate is missing; you can disable this with the 'keep-pheno-on-missing-cov' modifier.
 
 Data can be transformed into other formats using the table below:
-| format | Generate | Input option |
+| Format | Generate | Input option |
 | ------ | :------: | :------: |
 | {PED, MAP} | --recode | --file |
 | {BED, BIM, FAM} | --make-bed | --bfile |
 | {TPED, TFAM} | --recode --transpose | --tfile |
 | {LGEN, MAP, FAM} | --recode-lgen | --lfile |
+> For example, ```plink --file <filename for {PED, MAP}>``` or ```plink --bfile <filename for {BED, BIM, FAM}>```.
 > PLINK also supports conversion from VCF format as ```plink --vcf <filename.vcf.gz> --make-bed```
+
+
 
 ## 3. Basic operations:
 Once the data is ready, you can start using PLINK. Here are some of the basic operations that you can perform:
@@ -37,7 +45,7 @@ Once the data is ready, you can start using PLINK. Here are some of the basic op
 This command will compute basic statistics (such as allele frequencies and missing data rates) for the dataset in the input files.
   - ```plink --file <filename> --summary ``` Show basic statistics: To get basic statistics on the dataset.
   - ```plink --file <filename> --freq```
-  - ``` plink --file <filename> --missing ``` Check for missing data: To check for missing data.
+  - ```plink --file <filename> --missing ``` Check for missing data: To check for missing data.
 
 - Quality Control (QC)
 This command will perform quality control (QC) on the dataset by removing SNPs and individuals that do not meet certain criteria. In this example, SNPs with a missing genotype rate higher than 5% (--geno 0.05), a minor allele frequency lower than 1% (--maf 0.01), and a significant deviation from Hardy-Weinberg equilibrium (--hwe 0.00001) will be removed. Individuals with a missing genotype rate higher than 10% (--mind 0.1) will also be removed. The filtered dataset will be saved in the output files.
