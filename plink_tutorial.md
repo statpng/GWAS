@@ -30,18 +30,21 @@ Data can be transformed into other formats using the table below:
 Once the data is ready, you can start using PLINK. Here are some of the basic operations that you can perform:
 - Summary Statistics
 This command will compute basic statistics (such as allele frequencies and missing data rates) for the dataset in the input files.
-  - Show basic statistics: To get basic statistics on the dataset, use the command ```plink --file <filename> --summary ```
+  - ```plink --file <filename> --summary ``` Show basic statistics: To get basic statistics on the dataset.
   - ```plink --file <filename> --freq```
-  - Check for missing data: To check for missing data, use the command ``` plink --file <filename> --missing ```
+  - ``` plink --file <filename> --missing ``` Check for missing data: To check for missing data.
 - Quality Control (QC)
 This command will perform quality control (QC) on the dataset by removing SNPs and individuals that do not meet certain criteria. In this example, SNPs with a missing genotype rate higher than 5% (--geno 0.05), a minor allele frequency lower than 1% (--maf 0.01), and a significant deviation from Hardy-Weinberg equilibrium (--hwe 0.00001) will be removed. Individuals with a missing genotype rate higher than 10% (--mind 0.1) will also be removed. The filtered dataset will be saved in the output files.
   - Filter the data: To filter the data based on various criteria such as allele frequency, genotyping rate, etc., use the command ``` plink --file <filename> --maf <threshold> --geno <threshold> ```
-  - Perform association tests: To perform association tests such as logistic regression, use the command "plink --file <filename> --logistic".
-  - Conduct genome-wide association study (GWAS): To perform a GWAS, use the command ```plink --file <filename> --assoc```
-  - Conduct principal component analysis (PCA): To perform PCA on the dataset, use the command ```plink --file <filename> --pca```
-  - Remove samples: ```plink --bfile <filename> --remove <bad_samples.txt>```
-  - LD pruning: selecting a SNP subset in approximate Linkage Disequilibrium (LD)
-  ```plink --bfile input --indep-pairwise 50 5 0.2 --out output```
+  - "plink --file <filename> --logistic" ㅖerform association tests such as logistic regression.
+  - ```plink --file <filename> --assoc``` Conduct genome-wide association study (GWAS).
+  - ```plink --file <filename> --pca``` Conduct principal component analysis (PCA).
+  - ```plink --file <filename> --remove <bad_samples.txt>``` Remove samples.
+  - ```plink --file <filename> --indep-pairwise <window size> <step size> <r2 threshold>```: LD-based pruning[^1] to select a SNP subset in approximate Linkage Disequilibrium (LD)
+    - ```.prune.in```: a pruned subset of marker IDs that are in approximate linkage equilibrium with each other
+    - ```.prune.out```: the IDs of all excluded variants.
+[^1]: They are currently based on correlations between genotype allele counts; phase is not considered. (Results may be slightly different from PLINK 1.07, due to a minor bugfix in the r2 computation when missing data is present, and more systematic handling of multicollinearity.)
+  
 
   
 ## 4. Association analysis
@@ -57,11 +60,7 @@ This command will perform a linear regression analysis of each SNP on the phenot
 Plink also supports several advanced operations such as data imputation, LD-based pruning, and haplotype analysis. Here are some examples:
   - PCA: This command will perform a principal component analysis (PCA) on the genetic data to identify population structure. The results will be saved in the output files: ```plink --bfile <input> --pca --out <output>```
 - Impute missing genotypes: To impute missing genotypes using the reference panel, use the command ```plink --file <filename> --geno <threshold> --impute```
-- LD-based pruning[^1]: To perform LD-based pruning, use the command ```plink --file <filename> --indep-pairwise <window size> <step size> <r2 threshold>```
-  - ```.prune.in```: a pruned subset of marker IDs that are in approximate linkage equilibrium with each other
-  - ```.prune.out```: the IDs of all excluded variants.
-[^1]: They are currently based on correlations between genotype allele counts; phase is not considered. (Results may be slightly different from PLINK 1.07, due to a minor bugfix in the r2 computation when missing data is present, and more systematic handling of multicollinearity.)
-  
+
   
 - Haplotype analysis: To perform haplotype analysis, use the command ```plink --file <filename> --hap <output filename>```
 
