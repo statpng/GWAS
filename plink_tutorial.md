@@ -69,17 +69,39 @@ Sure, here is a brief tutorial on how to use plink, a command-line tool for work
 1. Download and install plink:
 You can download the latest version of plink from the official website (https://www.cog-genomics.org/plink/). Once downloaded, unzip the file and place the plink executable in a directory that is included in your system PATH.
 
+
 2. Prepare the data:
-Before using plink, you need to prepare the genetic data in the PLINK format. This format consists of three files: a PED file that contains the genotype data for each individual, a MAP file that contains the information on the markers, and a FAM file that contains information on the samples.
+Before using plink, you need to prepare the genetic data in the PLINK format.
+(1) {PED, MAP};  (2) {BIM, BED, FAM}
+
+- .ped: PLINK/MERLIN/Haploview text pedigree + genotype table (ACGT)
+- .map: PLINK text fileset variant information file
+- .bim: PLINK extended MAP file
+- .bed: PLINK binary biallelic genotype table
+- .fam: PLINK sample information file
+
+Data can be transformed into other formats using the table below:
+--------------------
+| format | Generate | Input option |
+--------------------
+{PED, MAP} | --recode | --file
+{BED, BIM, FAM} | --make-bed | --bfile
+{TPED, TFAM} | --recode --transpose | --tfile
+{LGEN, MAP, FAM} | --recode-lgen | --lfile
+--------------------
+
+
+
 
 3. Basic operations:
-Once the data is ready, you can start using plink. Here are some of the basic operations that you can perform:
-- Show basic statistics: To get basic statistics on the dataset, use the command ```plink --file <filename> --summary ```
-- Check for missing data: To check for missing data, use the command ``` plink --file <filename> --missing ```
-- Filter the data: To filter the data based on various criteria such as allele frequency, genotyping rate, etc., use the command ``` plink --file <filename> --maf <threshold> --geno <threshold> ```
-- Perform association tests: To perform association tests such as logistic regression, use the command "plink --file <filename> --logistic".
-- Conduct genome-wide association study (GWAS): To perform a GWAS, use the command ```plink --file <filename> --assoc```
-- Conduct principal component analysis (PCA): To perform PCA on the dataset, use the command ```plink --file <filename> --pca```
+Once the data is ready, you can start using PLINK. Here are some of the basic operations that you can perform:
+  - Show basic statistics: To get basic statistics on the dataset, use the command ```plink --file <filename> --summary ```
+  - ```plink --file <filename> --freq```
+  - Check for missing data: To check for missing data, use the command ``` plink --file <filename> --missing ```
+  - Filter the data: To filter the data based on various criteria such as allele frequency, genotyping rate, etc., use the command ``` plink --file <filename> --maf <threshold> --geno <threshold> ```
+  - Perform association tests: To perform association tests such as logistic regression, use the command "plink --file <filename> --logistic".
+  - Conduct genome-wide association study (GWAS): To perform a GWAS, use the command ```plink --file <filename> --assoc```
+  - Conduct principal component analysis (PCA): To perform PCA on the dataset, use the command ```plink --file <filename> --pca```
 
 4. Advanced operations:
 Plink also supports several advanced operations such as data imputation, LD-based pruning, and haplotype analysis. Here are some examples:
