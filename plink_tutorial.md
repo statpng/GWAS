@@ -1,5 +1,5 @@
-# The first version
-Plink is a popular command-line tool for analyzing genetic data, particularly in genome-wide association studies (GWAS). In this tutorial, we will cover some basic commands and examples to help you get started with Plink.
+# PLINK Tutorial
+PLINK is a popular command-line tool for analyzing genetic data, particularly in genome-wide association studies (GWAS). In this tutorial, we will cover some basic commands and examples to help you get started with Plink.
 
 
 1. Download and install plink:
