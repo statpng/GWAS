@@ -87,7 +87,7 @@ Data can be transformed into other formats using the table below:
 | {BED, BIM, FAM} | --make-bed | --bfile |
 | {TPED, TFAM} | --recode --transpose | --tfile |
 | {LGEN, MAP, FAM} | --recode-lgen | --lfile |
-> plink --vcf kg3-chr22.vcf.gz --make-bed
+> PLINK also supports conversion from VCF format as ```plink --vcf <filename.vcf.gz> --make-bed```
 
 3. Basic operations:
 Once the data is ready, you can start using PLINK. Here are some of the basic operations that you can perform:
@@ -99,6 +99,11 @@ Once the data is ready, you can start using PLINK. Here are some of the basic op
   - Conduct genome-wide association study (GWAS): To perform a GWAS, use the command ```plink --file <filename> --assoc```
   - Conduct principal component analysis (PCA): To perform PCA on the dataset, use the command ```plink --file <filename> --pca```
 
+ ``` plink --bfile <filename> --geno 0.05 --mind 0.1 --maf 0.01 --hwe 0.00001 --make-bed --out <output> ```
+  
+4. Association analysis
+```plink --bfile <filename> --linear --pheno pheno.txt --covar covar.txt --out <output>```
+  
 4. Advanced operations:
 Plink also supports several advanced operations such as data imputation, LD-based pruning, and haplotype analysis. Here are some examples:
 - Impute missing genotypes: To impute missing genotypes using the reference panel, use the command ```plink --file <filename> --geno <threshold> --impute```
