@@ -76,7 +76,7 @@ PLINK also supports several advanced operations such as data imputation, LD-base
   - ```plink --file <input> --pca --out <output>``` performs a principal component analysis (PCA) on the genetic data to identify population structure.
 - ```plink --file <filename> --geno <threshold> --impute``` imputes missing genotypes using the reference panel.
 - ```plink --file <filename> --indep-pairwise <window size> <step size> <r2 threshold>``` 
-  is an LD-based pruning[^1] to select a SNP subset in approximate Linkage Disequilibrium (LD)
+  is an LD-based pruning[^1] to select a SNP subset in approximate Linkage Equilibrium
     - ```.prune.in```: a pruned subset of marker IDs that are in approximate linkage equilibrium with each other
     - ```.prune.out```: the IDs of all excluded variants.
 [^1]: They are currently based on correlations between genotype allele counts; phase is not considered. (Results may be slightly different from PLINK 1.07, due to a minor bugfix in the r2 computation when missing data is present, and more systematic handling of multicollinearity.)
