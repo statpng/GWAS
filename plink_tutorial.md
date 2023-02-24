@@ -37,7 +37,10 @@ This command will compute basic statistics (such as allele frequencies and missi
 
 - Quality Control (QC)
 This command will perform quality control (QC) on the dataset by removing SNPs and individuals that do not meet certain criteria. In this example, SNPs with a missing genotype rate higher than 5% (--geno 0.05), a minor allele frequency lower than 1% (--maf 0.01), and a significant deviation from Hardy-Weinberg equilibrium (--hwe 0.00001) will be removed. Individuals with a missing genotype rate higher than 10% (--mind 0.1) will also be removed. The filtered dataset will be saved in the output files.
-  - ``` plink --file <filename> --geno <maximum-per-variant> --mind <maximum-per-sample> ``` filters out SNPs and samples with a missing genotype rate higher than <maximum-per-variant> and <maximum-per-sample>, respectively.
+  - filters out SNPs and samples with a missing genotype rate higher than <maximum-per-variant> and <maximum-per-sample>, respectively.
+  
+  ``` plink --file <filename> --geno <maximum-per-variant> --mind <maximum-per-sample> ``` 
+  
   - ``` plink --file <filename> --maf <minimum-freq> --max-maf <maximum-freq> ``` filters out SNPs whose minor allele frequencies fall outside the range of <minimum-freq> to <maximum-freq>.
   - ``` plink --file <filename> --hwe <p-value> ``` filters out all variants which have Hardy-Weinberg equilibrium exact test p-value below the provided threshold.
 
