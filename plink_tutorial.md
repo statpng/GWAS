@@ -56,7 +56,12 @@ This command will perform a linear regression analysis of each SNP on the phenot
 Plink also supports several advanced operations such as data imputation, LD-based pruning, and haplotype analysis. Here are some examples:
   - PCA: This command will perform a principal component analysis (PCA) on the genetic data to identify population structure. The results will be saved in the output files: ```plink --bfile <input> --pca --out <output>```
 - Impute missing genotypes: To impute missing genotypes using the reference panel, use the command ```plink --file <filename> --geno <threshold> --impute```
-- LD-based pruning: To perform LD-based pruning, use the command ```plink --file <filename> --indep-pairwise <window size> <step size> <r2 threshold>```
+- LD-based pruning[^1]: To perform LD-based pruning, use the command ```plink --file <filename> --indep-pairwise <window size> <step size> <r2 threshold>```
+  - ```.prune.in```: a pruned subset of marker IDs that are in approximate linkage equilibrium with each other
+  - ```.prune.out```: the IDs of all excluded variants.
+[^1] They are currently based on correlations between genotype allele counts; phase is not considered. (Results may be slightly different from PLINK 1.07, due to a minor bugfix in the r2 computation when missing data is present, and more systematic handling of multicollinearity.)
+  
+  
 - Haplotype analysis: To perform haplotype analysis, use the command ```plink --file <filename> --hap <output filename>```
 
 5. Output formats:
