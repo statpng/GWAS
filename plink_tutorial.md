@@ -59,7 +59,7 @@ Plink also supports several advanced operations such as data imputation, LD-base
 - LD-based pruning[^1]: To perform LD-based pruning, use the command ```plink --file <filename> --indep-pairwise <window size> <step size> <r2 threshold>```
   - ```.prune.in```: a pruned subset of marker IDs that are in approximate linkage equilibrium with each other
   - ```.prune.out```: the IDs of all excluded variants.
-[^1] They are currently based on correlations between genotype allele counts; phase is not considered. (Results may be slightly different from PLINK 1.07, due to a minor bugfix in the r2 computation when missing data is present, and more systematic handling of multicollinearity.)
+[^1]: They are currently based on correlations between genotype allele counts; phase is not considered. (Results may be slightly different from PLINK 1.07, due to a minor bugfix in the r2 computation when missing data is present, and more systematic handling of multicollinearity.)
   
   
 - Haplotype analysis: To perform haplotype analysis, use the command ```plink --file <filename> --hap <output filename>```
