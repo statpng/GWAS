@@ -62,7 +62,7 @@ Additionally,
 [^a]: biallelic 변이 ID, 위치, Alleles 정보. [a] GD: “0”으로 세팅하는게 안전;  [b] BPP 값이 (-)인 경우, PLINK에서 해당 변이를 무시함;  [c] Allele: biallelic 변이들 정보 (주로 Minor, Major 순서);  [d] Chr: X chromosome (X or 23), Y chromosome (Y or 24), Pseudo-autosomal region of X (XY or 25), Mitochondrial (MT or 26)
 [^b]: (variants by sample) compressed matrix. [a] .binary >> read.bed() in r 이용) >> Diploid 유전체에서 각 행렬의 원소는 “A2 (Ref Allele)의 개수” (0, 1, 2)를 나타낸다.
 [^c]: [a] FID: 없으면 0;  [b] Sex: 1=male, 2=female, 0=unknown;  [c] Phenotype: 1=control, 2=case, 0 or -9 or non-numeric = missing, numeric value = quantitative trait.
-[^d]:  By default, the main phenotype is set to missing if any covariate is missing; you can disable this with the 'keep-pheno-on-missing-cov' modifier.
+[^d]:  By default, the main phenotype is set to missing if any covariate is missing; you can disable this with the ```keep-pheno-on-missing-cov``` modifier. Not all commands accept covariates, and PLINK will not always give you an error or warning. **The basic association (--assoc, --mh, --model, --tdt, --dfam, and --qfam) do not accept covariates**, neither do the basic haplotype association methods (--hap-assoc, --hap-tdt). Among the commands that do are --linear, --logistic, --chap and --proxy-glm. Also --gxe accepts a single covariate only (the others listed here accept multiple covariates).
 
 Data can be transformed into other formats using the table below:
 | Format | Generate | Input option |
