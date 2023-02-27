@@ -142,6 +142,11 @@ PLINK also supports several advanced operations such as data imputation, LD-base
   - --assoc / --model / --linear / --logistic / --assoc fisher or --model fisher
 
   
+
+```~/plink/plink --bfile ./data/merge0422_2 --chr 1-22 --geno 0.05 --mind 0.05 --maf 0.005 --hwe 0.000001 --pca --covar ./data/merge0422_pca.pheno --covar-name AGE1,AGE2,PC1,PC2,PC3,PC4,PC5,PC6,PC7,PC8,PC9,PC10 --pheno ./data/merge0422_pca.pheno --pheno-name SWB --linear interaction --adjust --allow-no-sex --out ./4/SWB_age1to3_pca```
+  
+  
+  
 ## 8. Other useful commands
 
 > --make-bed, --recode, --flip-scan, --merge-list, --write-snplist, --list-duplicate-vars, --freqx, --missing, --test-mishap, --hardy, --mendel, --ibc, --impute-sex, --indep-pairphase, --r2, --show-tags, --blocks, --distance, --genome, --homozyg, --make-rel, --make-grm-gz, --rel-cutoff, --cluster, --pca, --neighbour, --ibs-test, --regress-distance, --model, --bd, --gxe, --logistic, --dosage, --lasso, --test-missing, --make-perm-pheno, --unrelated-heritability, --tdt, --dfam, --qfam, --tucc, --annotate, --clump, --gene-report, --meta-analysis, --epistasis, --fast-epistasis, and --score
