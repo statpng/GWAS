@@ -133,7 +133,7 @@ PLINK also supports several advanced operations such as data imputation, LD-base
 ## 7. One-line PLINK command for GWAS
 ```plink --file <input> --geno 0.05 --maf 0.01 --hwe 0.00001 --mind 0.1 --pca --covar <covar.txt> --pheno <pheno.txt> --pheno-name <phenotype_name> --assoc --adjust --out <output>```
 
-  - --assoc / --fisher / --model / --linear / --logistic
+  - --assoc / --model / --linear / --logistic / --assoc fisher or --model fisher
 
   
 ## 8. Other useful commands
