@@ -11,7 +11,7 @@ Before using PLINK, you need to prepare the genetic data in the PLINK format.
 
 ```(1) {PED, MAP}  or  (2) {BIM, BED, FAM}```
 
-  - .ped: PLINK/MERLIN/Haploview text pedigree + genotype (ATGC) table (FID | IID | PID | MID | Sex | P | rs1 | rs2 | rs3)
+  - **.ped**: PLINK/MERLIN/Haploview text pedigree + genotype (ATGC) table (FID | IID | PID | MID | Sex | P | rs1 | rs2 | rs3)
 
 |FID|IID|PID|MID|Sex|P|rs1|rs2|rs3|
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
@@ -19,7 +19,7 @@ Before using PLINK, you need to prepare the genetic data in the PLINK format.
 |2|2|0|0|1|0|CC|AA|AC|
 |3|3|0|0|1|1|CC|AA|AC|
 
-  - .map: PLINK text fileset variant information file (Chr | SNP | GD | BPP)
+  - **.map**: PLINK text fileset variant information file (Chr | SNP | GD | BPP)
 
 |Chr|SNP|GD|BPP|
 |:--:|:--:|:--:|:--:|
@@ -27,7 +27,7 @@ Before using PLINK, you need to prepare the genetic data in the PLINK format.
 |1|rs2|0|880000|
 |1|rs3|0|890000|
 
-- .bim[^a]: PLINK extended MAP file (Chr | SNP | GD | BPP | Allele1 | Allele2)
+- **.bim**[^a]: PLINK extended MAP file (Chr | SNP | GD | BPP | Allele1 | Allele2)
 
 |Chr|SNP|GD|BPP|Allele1|Allele1|
 |:--:|:--:|:--:|:--:|:--:|:--:|
@@ -35,13 +35,13 @@ Before using PLINK, you need to prepare the genetic data in the PLINK format.
 |1|rs2|0|880000|A|G|
 |1|rs3|0|890000|A|C|
 
-- .bed[^b]: PLINK binary biallelic genotype table (binary version of the SNP information of the .ped file)
+- **.bed**[^b]: PLINK binary biallelic genotype table (binary version of the SNP information of the .ped file)
 
 |Contains binary version of the SNP info of the *.ped file.|
 |:--:|
 |(not in a format readable for human)|
 
-- .fam[^c]: PLINK sample information file (FID | IID | PID | MID | Sex | P)
+- **.fam**[^c]: PLINK sample information file (FID | IID | PID | MID | Sex | P)
 
 |FID|IID|PID|MID|Sex|P|
 |:--:|:--:|:--:|:--:|:--:|:--:|
@@ -50,8 +50,8 @@ Before using PLINK, you need to prepare the genetic data in the PLINK format.
 |3|3|0|0|1|1|
 
 Additionally, 
-  - pheno.txt: phenotype information (FID | IID | P1 | P2 | P3 | ...)
-  - covar.txt[^d]: covariates information (FID | IID | C1 | C2 | C3 | ...)
+  - **pheno.txt**: phenotype information (FID | IID | P1 | P2 | P3 | ...)
+  - **covar.txt**[^d]: covariates information (FID | IID | C1 | C2 | C3 | ...)
 
 |FID|IID|P/C 1|P/C 2|P/C 3|
 |:--:|:--:|:--:|:--:|:--:|
