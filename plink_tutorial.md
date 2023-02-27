@@ -12,11 +12,13 @@ Before using PLINK, you need to prepare the genetic data in the PLINK format.
 ```(1) {PED, MAP}  or  (2) {BIM, BED, FAM}```
 
   - .ped: PLINK/MERLIN/Haploview text pedigree + genotype (ATGC) table (FID | IID | PID | MID | Sex | P | rs1 | rs2 | rs3)
+
 |FID|IID|PID|MID|Sex|P|rs1|rs2|rs3|
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 |1|1|0|0|2|1|CT|AG|AA|
 |2|2|0|0|1|0|CC|AA|AC|
 |3|3|0|0|1|1|CC|AA|AC|
+
   - .map: PLINK text fileset variant information file (Chr | SNP | GD | BPP)
 |Chr|SNP|GD|BPP|
 |:--:|:--:|:--:|:--:|
