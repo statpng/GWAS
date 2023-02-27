@@ -118,7 +118,7 @@ PLINK also supports several advanced operations such as data imputation, LD-base
   is an LD-based pruning[^1] to select a SNP subset in approximate Linkage Equilibrium
     - ```.prune.in```: a pruned subset of marker IDs that are in approximate linkage equilibrium with each other
     - ```.prune.out```: the IDs of all excluded variants.
-- ```plink --file <filename> --chr <CHR> --from-kb <from_bp> --to-kb <to_bp> --recodeA``` extracts the SNPs located between <from_bp> and <to_bp>
+- ```plink --file <filename> --chr <CHR> --from-kb <from_bp> --to-kb <to_bp> --recodeA``` extracts the SNPs located between ```<from_bp>``` and ```<to_bp>```
   
   e.g. ```plink --file <filename> --chr 3 --from-kb 134840 --to-kb 135052 --recodeA``` extract the SNPs that are within 60kb of the TP gene (134,840~135,052)
   
