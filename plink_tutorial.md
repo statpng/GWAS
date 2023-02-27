@@ -20,21 +20,29 @@ Before using PLINK, you need to prepare the genetic data in the PLINK format.
 |3|3|0|0|1|1|CC|AA|AC|
 
   - .map: PLINK text fileset variant information file (Chr | SNP | GD | BPP)
+
 |Chr|SNP|GD|BPP|
 |:--:|:--:|:--:|:--:|
 |1|rs1|0|870000|
 |1|rs2|0|880000|
 |1|rs3|0|890000|
-  - .bim[^a]: PLINK extended MAP file (Chr | SNP | GD | BPP | Allele1 | Allele2)
+
+- .bim[^a]: PLINK extended MAP file (Chr | SNP | GD | BPP | Allele1 | Allele2)
+
 |Chr|SNP|GD|BPP|Allele1|Allele1|
 |:--:|:--:|:--:|:--:|:--:|:--:|
 |1|rs1|0|870000|C|T|
 |1|rs2|0|880000|A|G|
 |1|rs3|0|890000|A|C|
-  - .bed[^b]: PLINK binary biallelic genotype table (binary version of the SNP information of the .ped file)
+
+- .bed[^b]: PLINK binary biallelic genotype table (binary version of the SNP information of the .ped file)
+
 |Contains binary version of the SNP info of the *.ped file. (not in a format readable for human)|
 |:--:|
-  - .fam[^c]: PLINK sample information file (FID | IID | PID | MID | Sex | P)
+||
+
+- .fam[^c]: PLINK sample information file (FID | IID | PID | MID | Sex | P)
+
 |FID|IID|PID|MID|Sex|P|
 |:--:|:--:|:--:|:--:|:--:|:--:|
 |1|1|0|0|2|1|
