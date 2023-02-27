@@ -12,14 +12,41 @@ Before using PLINK, you need to prepare the genetic data in the PLINK format.
 ```(1) {PED, MAP}  or  (2) {BIM, BED, FAM}```
 
   - .ped: PLINK/MERLIN/Haploview text pedigree + genotype (ATGC) table (FID | IID | PID | MID | Sex | P | rs1 | rs2 | rs3)
+|FID|IID|PID|MID|Sex|P|rs1|rs2|rs3|
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|1|1|0|0|2|1|CT|AG|AA|
+|2|2|0|0|1|0|CC|AA|AC|
+|3|3|0|0|1|1|CC|AA|AC|
   - .map: PLINK text fileset variant information file (Chr | SNP | GD | BPP)
+|Chr|SNP|GD|BPP|
+|:--:|:--:|:--:|:--:|
+|1|rs1|0|870000|
+|1|rs2|0|880000|
+|1|rs3|0|890000|
   - .bim[^a]: PLINK extended MAP file (Chr | SNP | GD | BPP | Allele1 | Allele2)
+|Chr|SNP|GD|BPP|Allele1|Allele1|
+|:--:|:--:|:--:|:--:|:--:|:--:|
+|1|rs1|0|870000|C|T|
+|1|rs2|0|880000|A|G|
+|1|rs3|0|890000|A|C|
   - .bed[^b]: PLINK binary biallelic genotype table (binary version of the SNP information of the .ped file)
+|Contains binary version of the SNP info of the *.ped file. (not in a format readable for human)|
+|:--:|
   - .fam[^c]: PLINK sample information file (FID | IID | PID | MID | Sex | P)
+|FID|IID|PID|MID|Sex|P|
+|:--:|:--:|:--:|:--:|:--:|:--:|
+|1|1|0|0|2|1|
+|2|2|0|0|1|0|
+|3|3|0|0|1|1|
 
 Additionally, 
   - pheno.txt: phenotype information (FID | IID | P1 | P2 | P3 | ...)
   - covar.txt[^d]: covariates information (FID | IID | C1 | C2 | C3 | ...)
+|FID|IID|P/C 1|P/C 2|P/C 3|
+|:--:|:--:|:--:|:--:|:--:|
+|1|1|0.0081|0.0060|-0.0008|
+|2|2|-0.0600|0.0318|-0.0827|
+|3|3|-0.0431|0.0013|-0.00027|
 
 [^a]: biallelic 변이 ID, 위치, Alleles 정보. [a] GD: “0”으로 세팅하는게 안전;  [b] BPP 값이 (-)인 경우, PLINK에서 해당 변이를 무시함;  [c] Allele: biallelic 변이들 정보 (주로 Minor, Major 순서);  [d] Chr: X chromosome (X or 23), Y chromosome (Y or 24), Pseudo-autosomal region of X (XY or 25), Mitochondrial (MT or 26)
 [^b]: (variants by sample) compressed matrix. [a] .binary >> read.bed() in r 이용) >> Diploid 유전체에서 각 행렬의 원소는 “A2 (Ref Allele)의 개수” (0, 1, 2)를 나타낸다.
