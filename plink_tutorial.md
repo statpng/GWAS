@@ -111,7 +111,8 @@ This command will perform a linear regression analysis of each SNP on the phenot
     - ```--model``` (Cochran-Armitage and full-model C/C association)
     - ```--model fisher``` (Fisher's exact (allelic) test)
     - ```--logistic``` (Logistic regression)
-  - Interaction effect: ```--linear interaction``` or ```--logistic interaction``` (Include SNP x covariate interactions)
+  - Interaction effect
+    - ```--linear interaction``` or ```--logistic interaction``` (SNP x covariate)
 
   
   
