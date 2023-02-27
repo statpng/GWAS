@@ -120,7 +120,7 @@ PLINK also supports several advanced operations such as data imputation, LD-base
     - ```.prune.out```: the IDs of all excluded variants.
 - ```plink --file <filename> --chr <CHR> --from-kb <from_bp> --to-kb <to_bp> --recodeA``` extracts the SNPs located between <from_bp> and <to_bp>
   
-  e.g. ```plink --file <filename> --chr 3 --from-kb 134840 --to-kb 135052 --recodeA`` extract the SNPs that are within 60kb of the TP gene (134,840~135,052)
+  e.g. ```plink --file <filename> --chr 3 --from-kb 134840 --to-kb 135052 --recodeA``` extract the SNPs that are within 60kb of the TP gene (134,840~135,052)
   
 [^1]: They are currently based on correlations between genotype allele counts; phase is not considered. (Results may be slightly different from PLINK 1.07, due to a minor bugfix in the r2 computation when missing data is present, and more systematic handling of multicollinearity.)
   
