@@ -84,23 +84,23 @@ This command will compute basic statistics (such as allele frequencies and missi
   - ```plink --file <filename> --freq```
   - ```plink --file <filename> --missing ``` checks for missing data.
 
-- Quality Control (QC)
+## 4. Quality Control (QC)
 This command will perform quality control (QC) on the dataset by removing SNPs and individuals that do not meet certain criteria. In this example, SNPs with a missing genotype rate higher than 5% (--geno 0.05), a minor allele frequency lower than 1% (--maf 0.01), and a significant deviation from Hardy-Weinberg equilibrium (--hwe 0.00001) will be removed. Individuals with a missing genotype rate higher than 10% (--mind 0.1) will also be removed. The filtered dataset will be saved in the output files.
-  - ``` plink --file <filename> --geno <maximum-per-variant> --mind <maximum-per-sample> ```
+  - Missing rate: ``` plink --file <filename> --geno <maximum-per-variant> --mind <maximum-per-sample> ```
   filters out SNPs and samples with a missing genotype rate higher than <maximum-per-variant> and <maximum-per-sample>, respectively.
   
-  - ``` plink --file <filename> --maf <minimum-freq> --max-maf <maximum-freq> ``` 
+  - MAF: ``` plink --file <filename> --maf <minimum-freq> --max-maf <maximum-freq> ``` 
   filters out SNPs whose minor allele frequencies fall outside the range of ```<minimum-freq>``` to ```<maximum-freq>```.
   
-  - ``` plink --file <filename> --hwe <p-value> ``` 
+  - HWE: ``` plink --file <filename> --hwe <p-value> ``` 
   filters out all variants which have Hardy-Weinberg equilibrium exact test p-value below the provided threshold.
 
-  - ```plink --file <filename> --remove <bad_samples.txt>``` 
+  - Samples: ```plink --file <filename> --remove <bad_samples.txt>``` 
   remove samples.
   
 
   
-## 4. Association analysis
+## 5. Association analysis
 ```plink --bfile <filename> --pheno <pheno.txt> --covar <covar.txt> --covar-name <cov1>,<cov2> --linear --out <output>```
 This command will perform a linear regression analysis of each SNP on the phenotype (stored in the pheno.txt file) while controlling for covariates (stored in the covar.txt file). Instead of ```--linear```, the following options can be either replaced or used together:
   - ```--fisher```
@@ -109,7 +109,7 @@ This command will perform a linear regression analysis of each SNP on the phenot
   - ```--logistic```
   
   
-## 5. Advanced operations:
+## 6. Advanced operations:
 PLINK also supports several advanced operations such as data imputation, LD-based pruning, and haplotype analysis. Here are some examples:
   - ```plink --file <input> --pca --out <output>``` performs a principal component analysis (PCA) on the genetic data to identify population structure.
 - ```plink --file <filename> --geno <threshold> --impute``` imputes missing genotypes using the reference panel.
@@ -125,19 +125,19 @@ PLINK also supports several advanced operations such as data imputation, LD-base
   
   
 
-## 6. One-line PLINK command for GWAS
+## 7. One-line PLINK command for GWAS
 ```plink --file <input> --geno 0.05 --maf 0.01 --hwe 0.00001 --mind 0.1 --pca --covar <covar.txt> --pheno <pheno.txt> --pheno-name <phenotype_name> --assoc --adjust --out <output>```
 
   - --assoc / --fisher / --model / --linear / --logistic
 
   
-## 7. Other useful commands
+## 8. Other useful commands
 
 > --make-bed, --recode, --flip-scan, --merge-list, --write-snplist, --list-duplicate-vars, --freqx, --missing, --test-mishap, --hardy, --mendel, --ibc, --impute-sex, --indep-pairphase, --r2, --show-tags, --blocks, --distance, --genome, --homozyg, --make-rel, --make-grm-gz, --rel-cutoff, --cluster, --pca, --neighbour, --ibs-test, --regress-distance, --model, --bd, --gxe, --logistic, --dosage, --lasso, --test-missing, --make-perm-pheno, --unrelated-heritability, --tdt, --dfam, --qfam, --tucc, --annotate, --clump, --gene-report, --meta-analysis, --epistasis, --fast-epistasis, and --score
 
   
   
-## 8. References
+## 9. References
 - Manual: https://zzz.bwh.harvard.edu/plink/data.shtml
 - Tutorial 1: https://www.bioinf.wits.ac.za/courses/sahgp/plink-tut-jul14.pdf
 - Tutorial 2: https://genomicsbootcamp.github.io/book/principal-component-analysis-pca.html#run-a-pca-in-r 
