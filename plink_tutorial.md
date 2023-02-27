@@ -81,7 +81,7 @@ Once the data is ready, you can start using PLINK. Here are some of the basic op
 
 - Summary Statistics
 This command will compute basic statistics (such as allele frequencies and missing data rates) for the dataset in the input files.
-  - Allele Frequency: ```plink --file <filename> --freq```
+  - Allele Frequency: ```plink --file <filename> --freq``` (with ```--counts```)
   - Missing rate: ```plink --file <filename> --missing ```
   - LD: ```plink --file <filename> --extract <SNP_List.txt> --r2```
 
@@ -104,10 +104,15 @@ This command will perform quality control (QC) on the dataset by removing SNPs a
 ## 5. Association analysis
 ```plink --bfile <filename> --pheno <pheno.txt> --covar <covar.txt> --covar-name <cov1>,<cov2> --linear --out <output>```
 This command will perform a linear regression analysis of each SNP on the phenotype (stored in the pheno.txt file) while controlling for covariates (stored in the covar.txt file). Instead of ```--linear```, the following options can be either replaced or used together:
-  - ```--fisher```
-  - ```--model```
-  - ```--linear```
-  - ```--logistic```
+  - Quantitative trait
+    - ```--linear``` (Linear regression)
+  - Qualitative trait
+    - ```--assoc``` (Case/control or QTL association)
+    - ```--model``` (Cochran-Armitage and full-model C/C association)
+    - ```--model fisher``` (Fisher's exact (allelic) test)
+    - ```--logistic``` (Logistic regression)
+  - Interaction effect: ```--linear interaction``` or ```--logistic interaction``` (Include SNP x covariate interactions)
+
   
   
 ## 6. Advanced operations:
