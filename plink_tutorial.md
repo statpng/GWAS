@@ -52,6 +52,7 @@ Before using PLINK, you need to prepare the genetic data in the PLINK format.
 Additionally, 
   - pheno.txt: phenotype information (FID | IID | P1 | P2 | P3 | ...)
   - covar.txt[^d]: covariates information (FID | IID | C1 | C2 | C3 | ...)
+
 |FID|IID|P/C 1|P/C 2|P/C 3|
 |:--:|:--:|:--:|:--:|:--:|
 |1|1|0.0081|0.0060|-0.0008|
