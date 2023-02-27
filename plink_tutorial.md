@@ -81,8 +81,9 @@ Once the data is ready, you can start using PLINK. Here are some of the basic op
 
 - Summary Statistics
 This command will compute basic statistics (such as allele frequencies and missing data rates) for the dataset in the input files.
-  - ```plink --file <filename> --freq```
-  - ```plink --file <filename> --missing ``` checks for missing data.
+  - Allele Frequency: ```plink --file <filename> --freq```
+  - Missing rate: ```plink --file <filename> --missing ```
+  - LD: ```plink --file <filename> --extract <SNP_List.txt> --r2```
 
 ## 4. Quality Control (QC)
 This command will perform quality control (QC) on the dataset by removing SNPs and individuals that do not meet certain criteria. In this example, SNPs with a missing genotype rate higher than 5% (--geno 0.05), a minor allele frequency lower than 1% (--maf 0.01), and a significant deviation from Hardy-Weinberg equilibrium (--hwe 0.00001) will be removed. Individuals with a missing genotype rate higher than 10% (--mind 0.1) will also be removed. The filtered dataset will be saved in the output files.
@@ -113,10 +114,12 @@ This command will perform a linear regression analysis of each SNP on the phenot
 PLINK also supports several advanced operations such as data imputation, LD-based pruning, and haplotype analysis. Here are some examples:
   - ```plink --file <input> --pca --out <output>``` performs a principal component analysis (PCA) on the genetic data to identify population structure.
 - ```plink --file <filename> --geno <threshold> --impute``` imputes missing genotypes using the reference panel.
-- ```plink --file <filename> --indep-pairwise <window size> <step size> <r2 threshold>``` 
+- ```plink --file <filename> --indep-pairwise <window size> <step size> <threshold>``` 
   is an LD-based pruning[^1] to select a SNP subset in approximate Linkage Equilibrium
     - ```.prune.in```: a pruned subset of marker IDs that are in approximate linkage equilibrium with each other
     - ```.prune.out```: the IDs of all excluded variants.
+- ```plink --file <filename> --chr <CHR> --from-kb <from_bp> --to-kb <to_bp> --recodeA``` extract the SNPs that are within 60kb of the TP gene (134,840~135,052)
+  
 [^1]: They are currently based on correlations between genotype allele counts; phase is not considered. (Results may be slightly different from PLINK 1.07, due to a minor bugfix in the r2 computation when missing data is present, and more systematic handling of multicollinearity.)
   
 - Haplotype analysis[^2]: To perform haplotype analysis, use the command ```plink --file <filename> --hap <output filename>```
