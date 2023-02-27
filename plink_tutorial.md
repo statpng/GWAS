@@ -37,9 +37,9 @@ Before using PLINK, you need to prepare the genetic data in the PLINK format.
 
 - .bed[^b]: PLINK binary biallelic genotype table (binary version of the SNP information of the .ped file)
 
-|Contains binary version of the SNP info of the *.ped file. (not in a format readable for human)|
+|Contains binary version of the SNP info of the *.ped file.|
 |:--:|
-||
+|(not in a format readable for human)|
 
 - .fam[^c]: PLINK sample information file (FID | IID | PID | MID | Sex | P)
 
