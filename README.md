@@ -32,3 +32,10 @@ Once significant genetic associations have been identified, further studies may 
 ### Conclusion
 
 GWAS is a powerful tool for identifying genetic variants associated with diseases or traits. By following this workflow, researchers can conduct a rigorous and systematic analysis of genetic data to uncover novel insights into the genetic basis of human health and disease.
+
+
+
+
+
+# PLINK
+
