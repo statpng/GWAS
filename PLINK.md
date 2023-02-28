@@ -1,5 +1,7 @@
 # PLINK
 
+
+## Table of Contents
 - [Introduction](#introduction)
 - [Data Preparation](#data-preparation)
 - [Quality Control](#quality-control)
