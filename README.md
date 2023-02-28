@@ -37,5 +37,3 @@ GWAS is a powerful tool for identifying genetic variants associated with disease
 
 
 
-# PLINK
-
