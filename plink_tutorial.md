@@ -12,6 +12,7 @@ It's likely that you currently use the absolute path ~/plink/plink to run PLINK.
 3. Add the following command to the file: `alias plink='~/plink/plink'`
 4. Save and exit the file.
 5. Refresh the changes by typing `source ~/.bash_profile` in the terminal.
+6. If necessary, you can make the changes of .bash_profile apply automatically by adding `echo "source ~/.bash_profile" >> ~/zshrc` to your zshrc file.
 After following these steps, you can now use the `plink` command instead of the full path `~/plink/plink` to run PLINK.
 
 Similarly, you can perform the above steps on Windows.
