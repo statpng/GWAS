@@ -18,3 +18,24 @@ Selection of a reference panel: A reference panel of genotypes is selected to us
 Imputation: The --impute option in PLINK is used to impute missing genotypes in the study dataset using the reference panel.
 Post-imputation QC: QC is performed on the imputed genotype data to ensure accuracy and quality of the imputation results.
 Imputation can increase the power of GWAS by increasing the number of genetic variants that can be analyzed and by reducing the impact of missing genotype data. However, it is important to carefully select and evaluate the reference panel and to perform appropriate QC to ensure the accuracy and validity of the imputed genotypes.
+
+
+
+
+
+
+
+## Michigan Imputation Server
+### Reference Panel
+
+Our server offers genotype imputation from different reference panels. The most accurate and largest panel is HRC (Version r1.1 2016). Please select one that fulfills your needs and supports the population of your input data:
+
+- HRC (Version r1.1 2016)
+- HLA Imputation Panel: two-field (four-digit) and G-group resolution
+- HRC (Version r1 2015)
+- 1000 Genomes Phase 3 (Version 5)
+- 1000 Genomes Phase 1 (Version 3)
+- CAAPA - African American Panel
+- HapMap 2
+
+
