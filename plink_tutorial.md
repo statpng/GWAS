@@ -5,6 +5,19 @@ PLINK is a popular command-line tool for analyzing genetic data, particularly in
 ## 1. Download and install PLINK:
 You can download the latest version of PLINK from the official website (https://www.cog-genomics.org/plink/). Once downloaded, unzip the file and place the PLINK executable in a directory that is included in your system PATH.
 
+It's likely that you currently use the absolute path ~/plink/plink to run PLINK. However, you can simplify this by creating an alias for the command PLINK instead. To do this on a Mac:
+
+1. Go to your home directory by typing `cd ~` in the terminal.
+2. Open the .bash_profile file with administrative privileges by typing `sudo vi .bash_profile`.
+3. Add the following command to the file: `alias plink='~/plink/plink'`
+4. Save and exit the file.
+5. Refresh the changes by typing `source ~/.bash_profile` in the terminal.
+After following these steps, you can now use the `plink` command instead of the full path `~/plink/plink` to run PLINK.
+
+Similarly, you can perform the above steps on Windows.
+
+
+
 
 ## 2. Prepare the data:
 Before using PLINK, you need to prepare the genetic data in the PLINK format.
