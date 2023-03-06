@@ -112,8 +112,16 @@ This command will perform quality control (QC) on the dataset by removing SNPs a
 
   - Samples: ```plink --file <filename> --remove <bad_samples.txt>``` 
   remove samples.
-  
 
+
+  
+## Phasing and Imputation
+ - [Korean Reference Genome (KRG) database]()
+ - GAsP [Michigan imputation server](https://imputationserver.sph.umich.edu/index.html)
+ - ChinaMAP (ChinaMAP server)
+ - TOPMed (TOPMed server)
+  
+  
   
 ## 5. Association analysis
 ```plink --bfile <filename> --pheno <pheno.txt> --covar <covar.txt> --covar-name <cov1>,<cov2> --linear --out <output>```
