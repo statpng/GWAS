@@ -131,6 +131,10 @@ This command will perform quality control (QC) on the dataset by removing SNPs a
 - https://www.well.ox.ac.uk/~gav/qctool_v2/
 - [PLINK Erorrs and warnings](https://www.cog-genomics.org/plink/1.9/errors)
   
+
+## Population structure
+  - [Structure](https://web.stanford.edu/group/pritchardlab/home.html)
+  
   
 ## 5. Association analysis
 ```plink --bfile <filename> --pheno <pheno.txt> --covar <covar.txt> --covar-name <cov1>,<cov2> --linear --out <output>```
