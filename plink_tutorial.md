@@ -123,6 +123,15 @@ This command will perform quality control (QC) on the dataset by removing SNPs a
   
   
   
+  
+## Reference
+
+- Michigan imputation server (https://imputationserver.readthedocs.io/en/latest/getting-started/)
+- [CODA](https://coda.nih.go.kr/usab/pheweb/intro.do)
+- https://www.well.ox.ac.uk/~gav/qctool_v2/
+- [PLINK Erorrs and warnings](https://www.cog-genomics.org/plink/1.9/errors)
+  
+  
 ## 5. Association analysis
 ```plink --bfile <filename> --pheno <pheno.txt> --covar <covar.txt> --covar-name <cov1>,<cov2> --linear --out <output>```
 This command will perform a linear regression analysis of each SNP on the phenotype (stored in the pheno.txt file) while controlling for covariates (stored in the covar.txt file). Instead of ```--linear```, the following options can be either replaced or used together:
