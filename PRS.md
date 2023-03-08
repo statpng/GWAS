@@ -22,7 +22,9 @@
 
 - 위 과정에서 clumping 기법 대신 기존 논문에서 보고된 SNP들로 필터링 시키면 됨.
 - 만약, 기존 논문에서 gene이 보고되었다면, NCBI에서 해당 gene의 위치정보를 가지고 와서 +-250kb까지 허용하여 해당 SNP만 가지고 PRS 계산을 하되, high correlation 문제가 생길 수 있기 때문에 clumping을 한번 더 실시함.
-- 즉, (선별된 X + SumStat) >> 논문에서 보고된 SNP 필터링 >> (if high-correlation) clumping >> PRS 추출
+- 즉, (선별된 X + SumStat) >> 논문에서 보고된 SNP 필터링 >> (if high-correlation*) clumping >> PRS 추출
+
+* Gene에 의해 SNP을 선별한 경우를 뜻함.
 
 
 ## 요약
