@@ -6,7 +6,9 @@ https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwj73vbP
 # Polygenic Risk Score (PRS)
 
 X: SNPs in our data
+
 SumStat: Summary Statistics
+
 RefPanel: Reference Panel
 
 1. SumStat 정보가 있는 경우
