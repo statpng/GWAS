@@ -14,7 +14,7 @@
 2. SumStat 없는 경우
    - RefPanel을 하나 준비함 (why?)
    - X 중에서 RefPanel에 있는 SNP만 추출함
-   - 선별된 X에 대해 보유한 데이터로 summary statistics를 계산함 (1번과의 차이)
+   - 선별된 X에 대해 보유한 데이터로 summary statistics를 계산함 (1번과의 차이점)
    - 선별된 X + 우리 데이터로 계산한 SumStat + clumping을 이용해 PRS 계산
 
 
