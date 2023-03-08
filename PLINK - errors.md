@@ -29,6 +29,7 @@
 > "_"를 제거해주면 해결 가능.
 
 - R에서 해결해줘도 되지만, shell에서 해결하는 코드:
+
 ```system("sed 's/_//g' ./data/merge0422_ped-map.ped > ./data/merge0422_ped-map_rm-underscore.ped")``` <br>
 ```system("sed 's/_//1' ./data/merge0422.pheno > ./data/merge0422_rm-underscore0.pheno")```
 
