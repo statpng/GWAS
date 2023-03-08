@@ -8,7 +8,7 @@
 
 > 아직 무슨 문제인지 이해가 안됨. CHR을 1번부터 22번으로 제한하면 해결가능.
 
-system("~/plink/plink --ped ./data/merge0422_ped-map.ped --map ./data/merge0422_ped-map.map --recode vcf --chr 1-22 --out ./data/merge0422_vcf_no-sex")
+```system("~/plink/plink --ped ./data/merge0422_ped-map.ped --map ./data/merge0422_ped-map.map --recode vcf --chr 1-22 --out ./data/merge0422_vcf_no-sex")```
 
 
 
@@ -39,10 +39,12 @@ system("~/plink/plink --ped ./data/merge0422_ped-map.ped --map ./data/merge0422_
 
 ### Michigan Imputation Server에서 VCF파일 에러 났을때
 
-- asdf
+- (1) 각 CHR별로 쪼개야하고, (2) vcf.gz 포맷으로 만들어야함.
+> (1) `--chr` 옵션을 이용해서 CHR 나누기, (2) bcftools를 이용해서 vcf를 vcf.gz로 변환.
 
+```
 for( i in 1:22 ){
   system(paste0("~/plink/plink --ped ./data/merge0422_ped-map_rm-underscore.ped --map ./data/merge0422_ped-map.map --recode vcf --chr ", i, " --snps-only just-acgt --out ./data/merge0422_vcf_no-sex_just-acgt_rm-underscore_chr",i))
   system(paste0("bcftools sort ./data/merge0422_vcf_no-sex_just-acgt_rm-underscore_chr",i,".vcf -Oz -o ./data/merge0422_vcf_no-sex_just-acgt_rm-underscore_chr",i,".vcf.gz"))
 }
-
+```
