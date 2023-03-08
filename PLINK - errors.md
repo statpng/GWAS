@@ -39,6 +39,10 @@
 ```system("head -n 3 ./data/merge0422_rm-underscore.pheno")``` <br>
 ```system("head -n 3 ./data/merge0422_ped-map_rm-underscore.ped | awk '{print $1, $2, $3, $4}'")```
 
+  * `sed s/before/after/`: before에서 after로 바꾼다
+  * `/g`: 모든 "_"를 ""로 바꾼다
+  * `/1`: 첫번째 열에서 "_"를 ""로 바꾼다
+
 
 
 ### Michigan Imputation Server에서 VCF파일 에러 났을때
