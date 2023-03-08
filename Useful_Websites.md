@@ -1,0 +1,1 @@
+- [PGS catalog](https://www.pgscatalog.org/downloads/#dl_ftp_list): https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/
