@@ -4,7 +4,9 @@
 ## Clumping을 이용한 PRS 계산
 
 > X: SNPs in our data
+
 > SumStat: Summary Statistics
+
 > RefPanel: Reference Panel
 
 1. SumStat 정보가 있는 경우
