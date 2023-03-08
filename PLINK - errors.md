@@ -52,7 +52,8 @@
 
 ```
 for( i in 1:22 ){
-  system(paste0("~/plink/plink --ped ./data/merge0422_ped-map_rm-underscore.ped --map ./data/merge0422_ped-map.map --recode vcf --chr ", i, " --snps-only just-acgt --out ./data/merge0422_vcf_no-sex_just-acgt_rm-underscore_chr",i))
-  system(paste0("bcftools sort ./data/merge0422_vcf_no-sex_just-acgt_rm-underscore_chr",i,".vcf -Oz -o ./data/merge0422_vcf_no-sex_just-acgt_rm-underscore_chr",i,".vcf.gz"))
+  system( paste0("plink --ped FileName.ped --map FileName.map --recode vcf --chr ", i, " --snps-only just-acgt --out FileName_chr",i) )
+  system(paste0("bcftools sort FileName_chr",i,".vcf -Oz -o FileName_chr",i,".vcf.gz"))
 }
 ```
+
