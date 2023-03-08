@@ -5,6 +5,8 @@ https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwj73vbP
 
 # Polygenic Risk Score (PRS)
 
+## Clumping을 이용한 PRS 계산
+
 X: SNPs in our data
 
 SumStat: Summary Statistics
@@ -21,15 +23,6 @@ RefPanel: Reference Panel
    - 선별된 X에 대해 보유한 데이터로 summary statistics를 계산함
    - 선별된 X + 우리 데이터로 계산한 SumStat + clumping을 이용해 PRS 계산
 
-(1)
-
-- (SumStat 있는 경우) (X=Our SNP, RefPanel=SumStat's RefPanel) >> X 중 RefPanel에 있는 SNP들만 필터링 >> (선별된 SNP, SumStat)
-- (SumStat 없는 경우) (X=Our SNP, RefPanel=Appropriate RefPanel) >> X 중 RefPanel에 있는 SNP들만 필터링 >> 보유한 데이터로 회귀분석 실시 후 SumStat 계산 >> (선별된 SNP, SumStat)
-
-(2) 
-
-- (선별된 SNP, SumStat) >> clumping (rsq < 0.1~0.2; 250kb) >> PRS 계산 완료
-
 
 ## Genetic Risk Score (GRS) 
 
@@ -37,7 +30,14 @@ RefPanel: Reference Panel
 - 만약, 기존 논문에서 gene이 보고되었다면, NCBI에서 해당 gene의 위치정보를 가지고 와서 +-250kb까지 허용하여 해당 SNP만 가지고 PRS 계산을 하되, high correlation 문제가 생길 수 있기 때문에 clumping을 한번 더 실시함. 즉, (선별된 X + SumStat) >> 논문에서 보고된 SNP 필터링 >> (if high-correlation) clumping >> PRS 추출
 
 
+## 요약
 
+즉, (1) RefPanel 준비, (2) RefPanel 기반 SNP 필터링, (3) SumStat 준비 또는 계산, (4) 기보고된 논문 or Clumping (rsq < 0.1~0.2; 250kb) 이용 SNP 추출, (5) 만약 기존 논문에서 gene이 보고되었다면 clumping 추가 실시, (6) PRS 계산 완료
+
+
+
+
+## Public database
 
 In public database, collect SNPs associated with our phenotype of interest.
 
@@ -46,6 +46,8 @@ In public database, collect SNPs associated with our phenotype of interest.
   * Global Biobank Engine (Multi-ethnic, >2000): https://biobankengine.stanford.edu
   * Biobank Japan (East Asian, 224): https://pheweb.jp/downloads
   * T2D AMP portal (Multi-ethnic, 292): https://t2d.hugeamp.org
+
+
 
 
 ## If summary statistics is available,
