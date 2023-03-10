@@ -25,7 +25,7 @@
 
 ### "Warning: Underscore(s) present in sample IDs."
 
-- 샘플 ID에 underscore ("_")가 있어서 나타나는 문제 (나중에 PLINK에서 "_"를 이용하여 column을 나누기 때문). <br>
+- 샘플 ID에 underscore ("\_")가 있어서 나타나는 문제 (나중에 PLINK에서 "_"를 이용하여 column을 나누기 때문). <br>
 > "_"를 제거해주면 해결 가능.
 
 - R에서 해결해줘도 되지만, shell에서 해결하는 코드:
