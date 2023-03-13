@@ -26,7 +26,15 @@ Imputation can increase the power of GWAS by increasing the number of genetic va
 
 
 ## Michigan Imputation Server
-### Reference Panel
+
+1. [Michigan](https://imputationserver.sph.umich.edu/index.html)
+2. [TopMed](https://imputation.biodatacatalyst.nhlbi.nih.gov/#!)
+3. [Sanger](https://imputation.sanger.ac.uk)
+4. [Korean](http://150.183.251.152/index.html#!pages/home)
+
+
+
+## Reference Panel
 
 Our server offers genotype imputation from different reference panels. The most accurate and largest panel is HRC (Version r1.1 2016). Please select one that fulfills your needs and supports the population of your input data:
 
