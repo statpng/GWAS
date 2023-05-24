@@ -1,6 +1,8 @@
-
 ```
+
+
 #!/bin/bash
+
 
 # Download Imputation Score
 
@@ -101,15 +103,34 @@ echo "All chromosomes completed"
 
 for chr in {1..22}
 do
-    filename=ukb22828_c${chr}_b0_v3
-~/plink2 --pfile ${filename} \
-	--memory 20000 \
-	--extract ${filename}_snpQC.snplist \
-	--keep ${filename}_sampleQC.id \
-	--make-bed \
-	--out /mnt/g/UKB_QC_BBF/${filename}
+
+filename=ukb22828_c${chr}_b0_v3
+~/plink2 --pfile /mnt/e/UKB/${filename}_snpQC \
+--memory 20000 \
+--extract /mnt/e/UKB/${filename}_snpQC.snplist \
+--keep /mnt/e/UKB/${filename}_sampleQC.id \
+--make-bed \
+--out /mnt/g/UKB_QC_BBF/${filename}_QCed
+
 done
-	
 
+ 
 
+for chr in {1..22}
+do
+
+filename=ukb22828_c${chr}_b0_v3
+~/plink2 --bfile /mnt/g/UKB_QC_BBF/${filename}_QCed \
+--memory 20000 \
+--update-name /mnt/e/UKB/QC/ukb_imp_mfi/ukb_mfi_chr${chr}_v3.tsv 2 1 \
+--make-just-bim \
+--out /mnt/g/UKB_QC_BBF/${filename}_QCed2
+
+done
+ 
+ 
+ 
+ 
+ 
+ 
 ```
