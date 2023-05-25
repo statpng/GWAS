@@ -3,6 +3,8 @@
 
 #!/bin/bash
 
+#!/bin/bash
+
 
 # Download Imputation Score
 
@@ -90,11 +92,11 @@ ukb22828_c${i}_b0_v3.afreq > exclrsIDs_c${i}_ambiguous.txt
       --out ukb22828_c${i}_b0_v3_sampleQC
 
 
-
-
 done
 
 echo "All chromosomes completed"
+
+
 
 
 
@@ -107,12 +109,14 @@ do
 filename=ukb22828_c${chr}_b0_v3
 ~/plink2 --pfile /mnt/e/UKB/${filename}_snpQC \
 --memory 20000 \
---extract /mnt/e/UKB/${filename}_snpQC.snplist \
---keep /mnt/e/UKB/${filename}_sampleQC.id \
+--keep /mnt/e/UKB/SampleID_SNPlist_AfterQC/ukb22828_c1to22_b0_v3_sampleQC.id \
 --make-bed \
---out /mnt/g/UKB_QC_BBF/${filename}_QCed
+--out /mnt/g/UKB_QCed/${filename}_QCed
 
+# --extract /mnt/e/UKB/SampleID_SNPlist_AfterQC/${filename}_snpQC.snplist
 done
+
+
 
  
 
@@ -120,16 +124,18 @@ for chr in {1..22}
 do
 
 filename=ukb22828_c${chr}_b0_v3
-~/plink2 --bfile /mnt/g/UKB_QC_BBF/${filename}_QCed \
+~/plink2 --bfile /mnt/g/UKB_QCed/${filename}_QCed \
 --memory 20000 \
 --update-name /mnt/e/UKB/QC/ukb_imp_mfi/ukb_mfi_chr${chr}_v3.tsv 2 1 \
 --make-just-bim \
---out /mnt/g/UKB_QC_BBF/${filename}_QCed2
+--out /mnt/g/UKB_QCed/${filename}_QCed_rsID
 
 done
- 
- 
- 
+
+
+
+
+
  
  
  
