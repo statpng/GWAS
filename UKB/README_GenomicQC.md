@@ -1,8 +1,5 @@
 ```
 
-
-#!/bin/bash
-
 #!/bin/bash
 
 
@@ -131,7 +128,6 @@ filename=ukb22828_c${chr}_b0_v3
 --out /mnt/g/UKB_QCed/${filename}_QCed_rsID
 
 done
-
 
 
 
